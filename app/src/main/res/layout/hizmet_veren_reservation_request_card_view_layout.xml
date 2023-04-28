@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hizmet_veren_reservation_request_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_green"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/app_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reservation_request_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profil_image_card"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                app:cardUseCompatPadding="true"
+                app:cardPreventCornerOverlap="true"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="@id/reservation_request_root"
+                app:layout_constraintTop_toTopOf="@id/reservation_request_root"
+                app:layout_constraintBottom_toBottomOf="@id/reservation_request_root"
+                >
+                <ImageView
+                    android:id="@+id/hizmet_alan_profil_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_page"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/profil" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/hizmet_alan_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toTopOf="@id/reservation_request_root"
+                app:layout_constraintBottom_toTopOf="@id/randevu_talep_tarih"
+                android:text="@string/name_surname"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+            />
+            <LinearLayout
+                android:id="@+id/randevu_talep_tarih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toBottomOf="@id/hizmet_alan_name"
+                app:layout_constraintBottom_toTopOf="@id/randevu_talep_saat"
+                >
+
+            <TextView
+                android:id="@+id/talep_edilen_tarih_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/underline_color"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:text="@string/talep_edilen_tarih"
+                />
+            <TextView
+                android:id="@+id/talep_edilen_tarih"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/underline_color"
+                android:textSize="10sp"
+
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/randevu_talep_saat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toBottomOf="@id/randevu_talep_tarih"
+                app:layout_constraintBottom_toTopOf="@id/hizmet_alan_ara"
+                >
+                <TextView
+                    android:id="@+id/talep_edilen_saat_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/underline_color"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:text="@string/talep_edilen_saat"
+                    />
+                <TextView
+                    android:id="@+id/talep_edilen_saat"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/underline_color"
+                    android:textSize="10sp"
+                    />
+                <TextView
+                    android:id="@+id/talep_edilen_pmOrAm"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/underline_color"
+                    android:textSize="10sp"
+                    />
+            </LinearLayout>
+            <Button
+                android:id="@+id/hizmet_alan_ara"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                app:layout_constraintTop_toBottomOf="@id/randevu_talep_saat"
+                app:layout_constraintEnd_toStartOf="@id/hizmet_alan_randevu_olustur"
+                app:layout_constraintBottom_toBottomOf="@id/reservation_request_root"
+                android:background="@drawable/round_corner"
+                android:text="@string/ara"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                />
+            <Button
+                android:id="@+id/hizmet_alan_randevu_olustur"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_corner"
+                android:text="@string/randevu_olustur"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/randevu_talep_saat"
+                app:layout_constraintEnd_toEndOf="@id/reservation_request_root"
+                app:layout_constraintBottom_toBottomOf="@id/reservation_request_root"
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

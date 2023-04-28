@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.reservation_system">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Reservation_system">
+
+        <activity android:name=".ui.act_user_management.act_splash.SplashPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.act_user_management.act_register.RegisterPage"/>
+        <activity android:name=".ui.act_user_management.act_login.LoginPage"/>
+        <activity android:name=".ui.act_hizmet_veren.navigation_menu.HizmetVerenNavigationMenuPage"/>
+        <activity android:name=".ui.act_hizmet_alan.navigation_menu.HizmetAlanNavigationMenuPage"/>
+        <activity android:name=".ui.act_hizmet_alan.home_page.PeopleAsCategory"/>
+        <activity android:name=".ui.act_hizmet_alan.home_page.HizmetAlanPeopleAsName"/>
+        <activity android:name=".ui.act_hizmet_veren.home_page.HizmetVerenPeopleAsName"/>
+        <activity android:name=".ui.act_hizmet_veren.reservations.reservation_requests.ReservationRequests"/>
+        <activity android:name=".ui.act_hizmet_veren.reservations.paid_reservations.PaidReservations"/>
+        <activity android:name=".ui.act_hizmet_veren.reservations.active_reservations.ActiveReservations"/>
+        <activity android:name=".ui.act_hizmet_alan.home_page.MakeAppointmentPage"/>
+        <activity android:name=".ui.act_hizmet_veren.reservations.reservation_requests.CreateReservation"/>
+        <activity android:name=".ui.act_iyzico.PayRegisteredActivity"/>
+        <activity android:name=".ui.act_hizmet_alan.reservations_page.PaymentWithDekont"/>
+        <activity android:name=".ui.act_hizmet_veren.reservations.paid_reservations.CreateActiveReservation"/>
+        <activity android:name=".ui.act_hizmet_veren.reservations.active_reservations.UpdateReservation"/>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/user_info_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:cardBackgroundColor="@color/app_green"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profil_image_card"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginStart="20dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="@id/root"
+                app:layout_constraintTop_toTopOf="@id/root"
+                >
+                <ImageView
+                    android:id="@+id/person_profil_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_page"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/profil" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toTopOf="@id/root"
+                app:layout_constraintBottom_toTopOf="@id/user_job"
+                android:text="@string/name_surname"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/user_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toBottomOf="@id/user_name"
+                app:layout_constraintBottom_toTopOf="@id/user_rate"
+                android:text="@string/job"
+                />
+            <RatingBar
+                android:id="@+id/user_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                android:rating="1"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:progressTint="@color/starColor"
+                android:progressBackgroundTint="@color/white"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toBottomOf="@id/user_job"
+
+                />
+            <Button
+                android:id="@+id/rating_user_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/degerlendir"
+                app:layout_constraintTop_toBottomOf="@id/profil_image_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:background="@drawable/stroke_background_white_and_green"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:visibility="invisible"
+
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/monthAndYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="Randevu Gününü Seçiniz : "
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_info_card"
+
+            />
+
+        <RelativeLayout
+            android:id="@+id/days_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monthAndYear"
+            android:nestedScrollingEnabled="true">
+
+        <devs.mulham.horizontalcalendar.HorizontalCalendarView
+            android:id="@+id/days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:textColorSelected="@color/app_green"
+            />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/morning_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sabah"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/days_layout"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+
+        <HorizontalScrollView
+            android:id="@+id/horizantal1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/morning_text"
+            >
+
+        <RadioGroup
+            android:id="@+id/morning_hours_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+           >
+            <RadioButton android:id="@+id/hour1"
+                android:text="08:30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/app_green"
+                android:buttonTint="@color/app_green"
+                android:checked="false"
+                />
+            <RadioButton android:id="@+id/hour2"
+                android:text="09:00"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_green"
+                android:buttonTint="@color/app_green"
+                android:checked="false"
+                />
+            <RadioButton android:id="@+id/hour3"
+                android:text="09:30"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_green"
+                android:buttonTint="@color/app_green"
+                android:checked="false"
+                />
+            <RadioButton android:id="@+id/hour4"
+                android:text="10:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/app_green"
+                android:buttonTint="@color/app_green"
+                android:checked="false"
+                />
+            <RadioButton
+                android:id="@+id/hour5"
+                android:text="10:30"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_green"
+                android:buttonTint="@color/app_green"
+                android:checked="false"
+                />
+            <RadioButton android:id="@+id/hour6"
+                android:text="11:00"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_green"
+                android:buttonTint="@color/app_green"
+                android:checked="false"
+                />
+
+        </RadioGroup>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/evening_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aksam"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizantal1"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+        <HorizontalScrollView
+            android:id="@+id/horizantal2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/evening_text"
+
+            >
+
+            <RadioGroup
+                android:id="@+id/evening_hours_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+
+                >
+                <RadioButton android:id="@+id/hour7"
+                    android:text="05:30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/app_green"
+                    android:buttonTint="@color/app_green"
+                    android:checked="false"
+                    />
+                <RadioButton android:id="@+id/hour8"
+                    android:text="06:00"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_green"
+                    android:buttonTint="@color/app_green"
+                    android:checked="false"
+                    />
+                <RadioButton android:id="@+id/hour9"
+                    android:text="06:30"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_green"
+                    android:buttonTint="@color/app_green"
+                    android:checked="false"
+                    />
+                <RadioButton android:id="@+id/hour10"
+                    android:text="07:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/app_green"
+                    android:buttonTint="@color/app_green"
+                    android:checked="false"
+                    />
+                <RadioButton android:id="@+id/hour11"
+                    android:text="07:30"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_green"
+                    android:buttonTint="@color/app_green"
+                    android:checked="false"
+                    />
+                <RadioButton android:id="@+id/hour12"
+                    android:text="08:00"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_green"
+                    android:buttonTint="@color/app_green"
+                    android:checked="false"
+                    />
+
+            </RadioGroup>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/makeAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Randevu Talep Et"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizantal2"
+            android:background="@color/app_green"
+            android:textColor="@color/white"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

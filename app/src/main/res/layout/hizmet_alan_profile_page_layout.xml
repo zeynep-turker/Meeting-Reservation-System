@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradientbackground"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hizmet_alan_profil_root"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:padding="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:id="@+id/profil_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:src="@drawable/logout_icon"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toTopOf="@id/hizmet_alan_profil_root"
+                    app:layout_constraintEnd_toEndOf="@id/hizmet_alan_profil_root"
+                    android:shadowColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/profil_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profil"
+                    app:layout_constraintStart_toStartOf="@id/hizmet_alan_profil_root"
+                    app:layout_constraintEnd_toEndOf="@id/hizmet_alan_profil_root"
+                    app:layout_constraintTop_toTopOf="@id/hizmet_alan_profil_root"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_profil_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/profile_page"
+                    app:layout_constraintStart_toStartOf="@id/hizmet_alan_profil_root"
+                    app:layout_constraintEnd_toEndOf="@id/hizmet_alan_profil_root"
+                    app:layout_constraintTop_toBottomOf="@id/profil_text"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    app:civ_border_width="3dp"
+                    app:civ_border_color="#FFFFFFFF"
+                    android:contentDescription="@string/profil" />
+
+                <Button
+                    android:id="@+id/change_profil_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="@string/profil_resmini_degistir"
+                    android:textSize="8sp"
+                    android:padding="5dp"
+                    android:background="@color/app_green"
+                    android:drawableLeft="@drawable/camera_icon"
+                    android:drawableTint="@color/white"
+                    android:drawablePadding="8dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_profil_image"
+
+                    />
+
+                <TextView
+                    android:id="@+id/profil_name_surname_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/name_surname"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintTop_toBottomOf="@id/change_profil_photo"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profil_name_surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    app:errorEnabled="true"
+                    android:theme="@style/TextInputLayout"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/app_green"
+                    app:layout_constraintTop_toBottomOf="@id/profil_name_surname_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:hintEnabled="false"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+                        android:drawableStart="@drawable/user"
+                        android:drawablePadding="8dp"
+                        android:autofillHints="@string/name_surname" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/profil_tel_no_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/telephone_number"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintTop_toBottomOf="@id/profil_name_surname"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profil_tel_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:theme="@style/TextInputLayout"
+                    app:errorEnabled="true"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/app_green"
+                    app:layout_constraintTop_toBottomOf="@id/profil_tel_no_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:hintEnabled="false"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="@string/telephone_number"
+                        android:textColorHint="@color/app_green"
+                        android:drawableStart="@drawable/mobile_icon"
+                        android:textColor="@color/black"
+                        android:drawablePadding="8dp"
+                        android:autofillHints="@string/telephone_number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/profil_change_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="Şifreyi Sıfırla"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/white"
+                    android:drawableLeft="@drawable/lock_icon"
+                    android:padding="5dp"
+                    android:background="@color/app_green"
+                    app:layout_constraintTop_toBottomOf="@id/profil_tel_no"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+
+                <Button
+                    android:id="@+id/profil_save_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/app_green"
+                    android:text="@string/save"
+                    app:layout_constraintTop_toBottomOf="@id/profil_change_password"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/hizmet_alan_profil_root"
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

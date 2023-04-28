@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/category_card"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/app_green"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/app_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profil_image_card"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="@id/root"
+            app:layout_constraintTop_toTopOf="@id/root"
+            app:layout_constraintBottom_toBottomOf="@id/root"
+            >
+        <ImageView
+            android:id="@+id/person_profil_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile_page"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/profil" />
+        </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toTopOf="@id/root"
+                app:layout_constraintBottom_toTopOf="@id/person_job"
+                android:text="@string/name_surname"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/person_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/underline_color"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/profil_image_card"
+                app:layout_constraintTop_toBottomOf="@id/person_name"
+                app:layout_constraintBottom_toBottomOf="@id/root"
+                android:text="@string/job"
+                />
+            <LinearLayout
+                android:id="@+id/star_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/root"
+                app:layout_constraintBottom_toBottomOf="@id/root"
+                >
+                <TextView
+                    android:id="@+id/user_rating_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:padding="20dp"
+                    android:textSize="10sp"
+                    android:text="4.3"
+                    android:textColor="@color/black"
+                    app:drawableLeftCompat="@drawable/star_icon" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
+
+
